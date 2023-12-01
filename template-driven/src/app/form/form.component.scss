@@ -1,0 +1,35 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__heading {
+        width: 30%;
+    }
+
+    &__forms {
+        margin-top: 20px;
+        width: 50%;
+        border: 2px solid black;
+        padding: 20px;
+        border-radius: 30px;
+        background-color: #e2e2ff;
+    }
+
+    &__form {
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+    }
+
+    &__submit {
+        width: 100px;
+    }
+}
+
+.error-msg {
+    color: red;
+}

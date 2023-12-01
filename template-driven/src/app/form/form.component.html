@@ -1,0 +1,52 @@
+<div class="main">
+    <div class="main__heading">
+        <h2>Form Validation</h2>
+    </div>
+    <div class="main__forms">
+        <form class="main__form" (ngSubmit)="onSubmit(myf, userForm)" #myf="ngForm" *ngIf="userForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter Name" required name="name"
+                    [(ngModel)]="userForm.name" #username='ngModel'>
+                <div *ngIf="username.errors && username.touched">
+                    <small *ngIf="username.errors['required']" class="error-msg">Enter the username</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter Username" required
+                    name="username" [(ngModel)]="userForm.username" #username='ngModel'>
+                <div *ngIf="username.errors && username.touched">
+                    <small *ngIf="username.errors['required']" class="error-msg">Enter the username</small>
+                </div>
+            </div>
+            <div class=" form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required
+                    [(ngModel)]="userForm.email" #email="ngModel">
+                <div *ngIf="email.errors && email.touched">
+                    <small *ngIf="email.errors['required']" class="error-msg">Enter the email</small>
+                </div>
+            </div>
+            <div class=" form-group">
+                <label for="website">Website</label>
+                <input type="text" class="form-control" id="website" name="website" placeholder="Enter website" required
+                    [(ngModel)]="userForm.website" #address="ngModel">
+                <div *ngIf="address.errors && address.touched">
+                    <small *ngIf="address.errors['required']" class="error-msg">Enter the Website</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phnumber">Phone Number</label>
+                <input type="number" class="form-control" id="phnumber" name="phnumber" placeholder="Enter Phone Number"
+                    required [(ngModel)]="userForm.phnumber" #phnumber="ngModel">
+                <div *ngIf="phnumber.errors && phnumber.touched">
+                    <small *ngIf="phnumber.errors['required']" class="error-msg">Enter the Phone Number</small>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary main__submit">Submit</button>
+        </form>
+    </div>
+</div>
